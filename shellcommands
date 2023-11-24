@@ -1,0 +1,12 @@
+from api.models.roles import Roles
+from api.models.permissions import Permissions
+from api.serializers.roles import RolesSerializer
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
+
+roles = Roles(role_name='Auditor', role_status_check=True)
+roles.save()
+
+serializer = RolesSerializer(roles)  
+serializer.data
+
